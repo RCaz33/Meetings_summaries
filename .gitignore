@@ -3,4 +3,5 @@ data/
 PRIVATE.md
 **/__pycache__
 .streamlit/
-app_streamlit/Resumes_doc
+
+/Resumes_doc
