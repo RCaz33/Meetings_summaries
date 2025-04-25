@@ -16,3 +16,9 @@ INSTALLATION :
 6 - Prepare run with PORT mapping for accessibility (-p <host_port>:<container_port>)
 
 7 - Start container [ docker run -d -e <> -e <> -p<> -v <> <NAME_IMAGE>]
+
+
+
+to instanciate docker : 
+
+docker run -d -e LANGUAGE_KEY="<key_azure_language ressource>" -e LANGUAGE_ENDPOINT="<endpoint>" -p 8501:8501 -v "<local_volume>":<volume_in_container>

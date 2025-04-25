@@ -1,0 +1,4 @@
+LANGUAGE_KEY=""
+LANGUAGE_ENDPOINT="https://<name_ressource_language>.cognitiveservices.azure.com/"
+KEY_VAULT_NAME=""
+SECRET_NAME=""

@@ -5,29 +5,15 @@ from azure.ai.language.conversations import ConversationAnalysisClient
 
 
 
-CW_people = ("Elodie Jaubert","Remi Cazelles","Alban Chesneau","Nicolas CASTET","Lucie Chupin","Mahbub Morshed",
-             "Thomas Bottein","Charlotte Gallois","Fabien Bohic","David JUNQUA")
-CW_company = dict({"Elodie Jaubert":{'id':1,
+people = ("list of names from the transcript file")
+company = dict({"name1":{'id':1,
                                     'role':'Customer'},
-                  "Remi Cazelles":{'id':2,
+                  "name2":{'id':2,
                                    'role':'Customer'},
-                  "Wenbo Li":{'id':3,
+                  "name3":{'id':3,
                                    'role':'Assistant'},
-                  "Alban Chesneau":{'id':4,
-                                    'role':'Customer'},
-                  "Nicolas CASTET":{'id':5,
-                                    'role':'Customer'},
-                   "Lucie Chupin":{'id':6,
-                                    'role':'Agent'},
-                    "Mahbub Morshed":{'id':7,
-                                    'role':'Customer'},
-                    "Thomas Bottein":{'id':8,
-                                    'role':'Customer'},
-                    "Charlotte Gallois":{'id':9,
-                                    'role':'Agent'},
-                    "Fabien Bohic":{'id':10,
-                                    'role':'Customer'},
-                    
+                  "name4":{'id':4,
+                                    'role':'Customer'},                    
                   })
 
 
@@ -35,8 +21,8 @@ CW_company = dict({"Elodie Jaubert":{'id':1,
 def assign_role_and_id(line):
     nom = " ".join(line.split(" ")[:2])
     try :
-        participant_id = CW_company[nom]["id"]
-        role = 'Agent'# CW_company[nom]["role"]
+        participant_id = company[nom]["id"]
+        role = 'Agent'# company[nom]["role"]
     except :
         participant_id = 99
         role = 'Customer'
@@ -57,7 +43,7 @@ def format_docx_document(doc):
             if line == "":
                 continue
             
-            elif line.startswith(CW_people):  
+            elif line.startswith(people):  
                 participant_id, role = assign_role_and_id(line)
                 
 

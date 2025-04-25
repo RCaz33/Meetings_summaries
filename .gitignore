@@ -1,0 +1,6 @@
+data/
+.env
+PRIVATE.md
+**/__pycache__
+.streamlit/
+Resumes_doc/
